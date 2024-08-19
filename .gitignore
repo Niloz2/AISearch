@@ -1,0 +1,105 @@
+# Maven target directory
+target/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# NetBeans specific files
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+*.bak
+*.orig
+*.rej
+*~
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.tmp
+*.bak
+*.old
+
+# MySQL configuration files
+*.sql
+*.sql.gz
+*.sqlite
+
+# Environment Variables
+.env
+
+# Compiled Java class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Maven Wrapper
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+!/.mvn/wrapper/MavenWrapperDownloader.java
+
+# Java crash reports
+hs_err_pid*
+
+# Windows OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Sensitive or configuration files
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node modules
+node_modules/
+
+# Vim files
+*.swp
+*.swo
+*.swn
+
+# Output directories
+/target/
+/build/
+
+# JetBrains IDEs
+.idea/
+/out/
+/*.iml
+/*.iws
+
+# Database files
+*.db
+*.sql
+*.sqlite
+
+# Eclipse specific files and directories
+.classpath
+.project
+.settings/
