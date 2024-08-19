@@ -35,6 +35,12 @@
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* Initially hidden */
+        }
+
+        .card.show {
+            opacity: 1; /* Fade-in effect */
+            transform: translateY(0); /* Move card to its normal position */
         }
 
         .card-body {
@@ -105,7 +111,7 @@
     <div class="container content-container">
         <!-- Heading to display the search query -->
         <h1 class="text-center">Learn More About "<%= request.getAttribute("query") %>"</h1>
-        <div class="row">
+        <div class="row" id="card-container">
             <% 
             // Retrieve search results from request attribute
             List<String> searchResults = (List<String>) request.getAttribute("searchResults");
@@ -116,13 +122,14 @@
                 String firstLink = searchResults.get(0); // Get the first link
                 
                 // Loop through each search result
-                for (String result : searchResults) {
+                for (int i = 0; i < searchResults.size(); i++) {
+                    String result = searchResults.get(i);
                     // Extract domain from the result URL
                     URL url = new URL(result);
                     String domain = url.getHost().startsWith("www.") ? url.getHost().substring(4) : url.getHost();
             %>
                     <!-- Column setup for responsive layout -->
-                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="col-12 col-md-6 col-lg-4 mb-3 card-container" style="display: none;">
                         <!-- Bootstrap card component -->
                         <div class="card h-100">
                             <!-- Card header with domain name -->
@@ -159,5 +166,18 @@
     </div>
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cards = document.querySelectorAll('.card-container');
+            cards.forEach(function(card, index) {
+                setTimeout(function() {
+                    card.style.display = 'block';
+                    setTimeout(function() {
+                        card.querySelector('.card').classList.add('show');
+                    }, 50);
+                }, index * 500); // Delay each card by 500ms
+            });
+        });
+    </script>
 </body>
 </html>
