@@ -38,7 +38,7 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            background: url('AISearchLogo/AISearchGifImage.gif') no-repeat center center;
+            background: url('AISearchLogo/Background-Gif.gif') no-repeat center center;
             background-size: cover;
             animation: fadein 500ms;
         }
@@ -117,7 +117,7 @@
         <!-- Company logo and name -->
         <div id="company-logo">
             <img src="AISearchLogo/AISearchWhiteLogo.jpg" alt="AISearch Logo">
-            <h1 class="text-primary">AISearch</h1>
+            <h1 class="text-primary">AIsearch</h1>
         </div>
         
         <!-- Search form -->
